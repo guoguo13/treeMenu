@@ -1,5 +1,8 @@
 # treeMenu
 一个文件树菜单，支持勾选
+
+Demo  
+https://guoguo13.github.io/treeMenu/
 ## 使用方法
 ### 1.定义数据
     var data = [
