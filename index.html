@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>树状菜单</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="tree">
-    </div>
-
-    <script src="tree.js"></script>
-    <script>
-    var data = [
-        { name: '主菜单一', children: [
-            { name: "一级子菜单一" },
-            { name: "一级子菜单二" , children: [
-                { name: "二级子菜单一" },
-                { name: "二级子菜单三" },
-                { name: "二级子菜单二" }
-            ]}
-        ]},
-        { name: '主菜单二', children: [
-            { name: "一级子菜单一" },
-            { name: "一级子菜单二" , children: [
-                { name: "二级子菜单一" },
-                { name: "二级子菜单二" }
-            ]}
-        ]}
-
-    ]
-    var tree = new Tree({
-        node: document.querySelector("#tree"),
-        menu: data,
-        callback: function(value) {
-            /* 被选中的元素 */
-            console.log(value);
-        }
-    })
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>树状菜单</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="tree"></div>
+        <script src="tree.js"></script>
+        <script>
+            var data = [
+                { label: "1", value: "1",  children: [
+                        { label: "12", value: "1", children: [
+                            { label: "13", value: "1" }
+                        ]
+                        }
+                    ]
+                },
+                {
+                    label: "21", value: "1", children: [
+                        {
+                            label: "22", value: "1", children: [
+                                { label: "23", value: "1" }
+                            ]
+                        }
+                    ]
+                },
+            ];
+            var tree = new Tree({
+                node: document.querySelector("#tree"),
+                menu: data,
+                show_expand_level: 1,
+                show_level_all: false,
+                show_checkbox: true,
+                callback: function(value) {
+                    /* 被选中的元素 */
+                    console.log(value);
+                }
+            });
+        </script>
+    </body>
 </html>

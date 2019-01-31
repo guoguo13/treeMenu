@@ -1,18 +1,62 @@
-body {
-    font-size: 14px;
-}
-ul {
-    padding: 0;
-}
-li {
-    list-style: none;
-}
 #tree {
-    margin-left: -36px;
+    width: 200px;
 }
-.sub-tree {
-    margin-left: 36px;
+.tree-expand {
+    cursor: pointer;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 3px 4px;
+    border-left: 4px solid #333;
+    border-top: 3.5px solid transparent;
+    border-bottom: 3.5px solid transparent;
+    transition: transform 0.3s ease-in-out;
 }
-.sub-tree:not(:first-child) {
-    display: none;
+.expanded {
+    transform: rotate(90deg);
+}
+.tree-item {
+    cursor: pointer;
+}
+.active {
+    background: #9cc5f8;
+}
+.tree-check-inner {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin: 0 4px;
+}
+
+.tree-check-checked.tree-check-inner {
+    background-color: #49f;
+    border: 1px solid #49f;
+}
+.tree-check-checked-notall.tree-check-inner:before {
+    left: 2.8px;
+    top: 4.5px;
+    position: absolute;
+    height: 2.3px;
+    width: 6.5px;
+    background: #fff;
+    content: " ";
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    opacity: 1;
+}
+.tree-check-checked.tree-check-inner:before {
+    display: table;
+    left: 3px;
+    transform: rotate(45deg) scale(1);
+    position: absolute;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    height: 8px;
+    width: 4px;
+    content: " ";
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    opacity: 1;
 }
