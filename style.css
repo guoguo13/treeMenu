@@ -19,7 +19,7 @@
     cursor: pointer;
 }
 .active {
-    background: #9cc5f8;
+    background: rgba(156, 197, 248,.3);
 }
 .tree-check-inner {
     width: 14px;
